@@ -17,7 +17,7 @@ import {
 import shuffle from '../../assets/images/shuffle.svg'
 import backward from '../../assets/images/backward.svg'
 import play from '../../assets/images/play.svg'
-import pause from '../../assets/images/pause.svg'
+// import pause from '../../assets/images/pause.svg'
 import forward from '../../assets/images/forward.svg'
 import volume from '../../assets/images/volume.svg'
 import repeat from '../../assets/images/repeat.svg'
