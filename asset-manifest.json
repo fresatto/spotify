@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/spotify/static/css/main.2baf2a8d.chunk.css",
+    "main.js": "/spotify/static/js/main.86c8d43f.chunk.js",
+    "main.js.map": "/spotify/static/js/main.86c8d43f.chunk.js.map",
+    "runtime~main.js": "/spotify/static/js/runtime~main.d74fabdd.js",
+    "runtime~main.js.map": "/spotify/static/js/runtime~main.d74fabdd.js.map",
+    "static/css/2.509658c0.chunk.css": "/spotify/static/css/2.509658c0.chunk.css",
+    "static/js/2.143f7137.chunk.js": "/spotify/static/js/2.143f7137.chunk.js",
+    "static/js/2.143f7137.chunk.js.map": "/spotify/static/js/2.143f7137.chunk.js.map",
+    "index.html": "/spotify/index.html",
+    "precache-manifest.9eafbfb63292b6026918b39920368c17.js": "/spotify/precache-manifest.9eafbfb63292b6026918b39920368c17.js",
+    "service-worker.js": "/spotify/service-worker.js",
+    "static/css/2.509658c0.chunk.css.map": "/spotify/static/css/2.509658c0.chunk.css.map",
+    "static/css/main.2baf2a8d.chunk.css.map": "/spotify/static/css/main.2baf2a8d.chunk.css.map",
+    "static/media/add_playlist.svg": "/spotify/static/media/add_playlist.3f6e21d5.svg",
+    "static/media/backward.svg": "/spotify/static/media/backward.198550c1.svg",
+    "static/media/forward.svg": "/spotify/static/media/forward.63fca2af.svg",
+    "static/media/play.svg": "/spotify/static/media/play.6557e51e.svg",
+    "static/media/repeat.svg": "/spotify/static/media/repeat.716dfa0b.svg",
+    "static/media/shuffle.svg": "/spotify/static/media/shuffle.54850ef4.svg",
+    "static/media/volume.svg": "/spotify/static/media/volume.6b27f592.svg"
+  }
+}
