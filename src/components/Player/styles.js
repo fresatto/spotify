@@ -47,6 +47,11 @@ export const CurrentMusicControls = styled.div`
 	display: flex;
 	margin-bottom: 5px;
 
+	button {
+		background: transparent;
+		border: none;
+	}
+
 	img {
 		margin-right: 15px;
 	}

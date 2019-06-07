@@ -36,11 +36,11 @@ const Player = () => (
 		</Current>
 		<Controls>
 			<CurrentMusicControls>
-				<img src={shuffle} alt="Aleatório" />
-				<img src={backward} alt="Voltar" />
-				<img src={play} alt="Play" />
-				<img src={forward} alt="Avançar" />
-				<img src={repeat} alt="Repitir" />
+				<button><img src={shuffle} alt="Aleatório" /></button>
+				<button><img src={backward} alt="Voltar" /></button>
+				<button><img src={play} alt="Play" /></button>
+				<button><img src={forward} alt="Avançar" /></button>
+				<button><img src={repeat} alt="Repitir" /></button>
 			</CurrentMusicControls>
 			<Slider
 				railStyle={{
