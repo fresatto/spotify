@@ -1,26 +1,40 @@
 import React from 'react'
 import './App.scss'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
-import Sidebar from './components/Sidebar'
-import Player from './components/Player'
-import Header from './components/Header'
-import { Wrapper, Container, Content } from './styles/components'
+// Reactotron
+import './config/reactotron'
+// Consts
+import store from './store'
+
+// Rotas
 import Routes from './routes'
+
+// Components
+import Sidebar from './components/Sidebar'
+import Header from './components/Header'
+import Player from './components/Player'
+
+// Styles
+import { Wrapper, Container, Content } from './styles/components'
 function App() {
+	console.tron.log('teste')
 	return (
-		<BrowserRouter>
-			<Wrapper>
-				<Container>
-					<Sidebar />
-					<Content>
-						<Header />
-						<Routes />
-					</Content>
-				</Container>
-				<Player />
-			</Wrapper>
-		</BrowserRouter>
+		<Provider store={store}>
+			<BrowserRouter>
+				<Wrapper>
+					<Container>
+						<Sidebar />
+						<Content>
+							<Header />
+							<Routes />
+						</Content>
+					</Container>
+					<Player />
+				</Wrapper>
+			</BrowserRouter>
+		</Provider>
 	)
 }
 
