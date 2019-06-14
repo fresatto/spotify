@@ -1,7 +1,22 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Spinner } from '../../components/Loading/styles'
 
 export const Container = styled.div`
 	margin-top: 30px;
+
+	${props =>
+		props.loading &&
+		css`
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			${Spinner} {
+				height: 50px;
+			}
+		`}
 `
 
 export const Header = styled.header`
@@ -54,7 +69,6 @@ export const SongList = styled.table`
 	width: 100%;
 	text-align: left;
 	margin-top: 20px;
-	color: #fff;
 
 	thead th {
 		font-size: 11px;
@@ -67,12 +81,16 @@ export const SongList = styled.table`
 			text-align: right;
 		}
 	}
+`
 
-	tbody td {
+export const SongItem = styled.tr`
+	td {
 		border-top: 1px solid #282828;
 		font-size: 13px;
 		padding: 0 10px;
 		line-height: 40px;
+		background: ${props => (props.selected ? '#282828' : 'transparent')};
+		color: ${props => (props.playing ? '#1ED760' : '#fff')};
 
 		&:first-child {
 			width: 80px;
@@ -83,7 +101,8 @@ export const SongList = styled.table`
 			text-align: right;
 		}
 	}
-	tbody tr:hover td {
+
+	:hover td {
 		background: #282828;
 	}
 `

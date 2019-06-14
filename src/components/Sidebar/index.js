@@ -4,7 +4,14 @@ import { bindActionCreators } from 'redux'
 
 import { Creators as PlaylistsAction } from '../../store/ducks/playlists'
 // Styles
-import { Container, Group, GroupTitle, NewPlayList, GroupItem } from './styles'
+import {
+	Container,
+	Group,
+	GroupTitle,
+	NewPlayList,
+	GroupItem,
+	LinkGroupItem,
+} from './styles'
 
 // Images
 import add_playlist from '../../assets/images/add_playlist.svg'
@@ -39,7 +46,12 @@ class Sidebar extends Component {
 					<GroupTitle>Playlists</GroupTitle>
 					{!!this.props.playlists.data.length ? (
 						this.props.playlists.data.map(playlist => (
-							<GroupItem key={playlist.id}>{playlist.title}</GroupItem>
+							<LinkGroupItem
+								to={`/playlists/${playlist.id}`}
+								key={playlist.id}
+							>
+								{playlist.title}
+							</LinkGroupItem>
 						))
 					) : (
 						<Loading />

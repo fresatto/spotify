@@ -15,6 +15,7 @@ import Routes from './routes'
 import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import Player from './components/Player'
+import ErrorBox from './components/ErrorBox'
 
 // Styles
 import { Wrapper, Container, Content } from './styles/components'
@@ -27,6 +28,7 @@ function App() {
 					<Container>
 						<Sidebar />
 						<Content>
+							<ErrorBox />
 							<Header />
 							<Routes />
 						</Content>

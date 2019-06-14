@@ -11,6 +11,7 @@ export const Container = styled.div`
 export const Current = styled.div`
 	display: flex;
 	align-items: center;
+	width: 220px;
 
 	img {
 		width: 48px;
@@ -65,5 +66,23 @@ export const Volume = styled.div`
 
 	img {
 		margin-right: 5px;
+	}
+`
+
+export const Time = styled.div`
+	display: flex;
+	width: 440px;
+	align-items: center;
+
+	span {
+		font-size: 10px;
+		color: #899299 !important;
+	}
+
+	span:first-child {
+		margin-right: 10px;
+	}
+	span:last-child {
+		margin-left: 10px;
 	}
 `

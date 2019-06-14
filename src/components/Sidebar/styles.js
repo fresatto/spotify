@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.aside`
 	/* -80px (Altura do footer - Player) */
@@ -14,6 +15,8 @@ export const Container = styled.aside`
 
 export const Group = styled.div`
 	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
 `
 
 export const GroupTitle = styled.h2`
@@ -30,6 +33,19 @@ export const GroupItem = styled.h4`
 	font-size: 13px;
 	line-height: 32px;
 	cursor: default;
+
+	:hover {
+		color: #fff;
+	}
+`
+
+export const LinkGroupItem = styled(Link)`
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 32px;
+	cursor: default;
+	text-decoration: none;
+	color: inherit;
 
 	:hover {
 		color: #fff;
