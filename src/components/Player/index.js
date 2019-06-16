@@ -24,7 +24,7 @@ import backward from '../../assets/images/backward.svg'
 import PlayIcon from '../../assets/images/play.svg'
 import PauseIcon from '../../assets/images/pause.svg'
 import forward from '../../assets/images/forward.svg'
-import volume from '../../assets/images/volume.svg'
+import VolumeIcon from '../../assets/images/volume.svg'
 import repeat from '../../assets/images/repeat.svg'
 
 import { connect } from 'react-redux'
@@ -38,6 +38,12 @@ const Player = ({
 	playing,
 	position,
 	duration,
+	handlePosition,
+	setPosition,
+	positionShow,
+	progress,
+	volume,
+	setVolume,
 }) => (
 	<Container>
 		{!!player.currentSong && (
@@ -45,6 +51,9 @@ const Player = ({
 				url={player.currentSong.file}
 				playStatus={player.status}
 				onPlaying={playing}
+				position={player.position}
+				onFinishedPlaying={next}
+				volume={volume}
 			/>
 		)}
 		<Current>
@@ -86,7 +95,7 @@ const Player = ({
 				</button>
 			</CurrentMusicControls>
 			<Time>
-				<span>{position}</span>
+				<span>{positionShow || position}</span>
 				<Slider
 					railStyle={{
 						background: '#404040',
@@ -98,23 +107,29 @@ const Player = ({
 						outline: 0,
 						border: 'none',
 					}}
+					onChange={value => handlePosition(value / 1000)}
+					onAfterChange={value => setPosition(value / 1000)}
+					max={1000}
+					value={progress}
 				/>
 				<span>{duration}</span>
 			</Time>
 		</Controls>
 		<Volume>
-			<img src={volume} alt="volume" />
+			<img src={VolumeIcon} alt="volume" />
 			<Slider
 				railStyle={{ background: '#404040', borderRadius: 10 }}
 				trackStyle={{ background: '#fff' }}
 				handleStyle={{ display: 'none' }}
-				// value={100}
+				onChange={value => setVolume(value)}
+				value={volume}
 			/>
 		</Volume>
 	</Container>
 )
 
 function msToTime(duration) {
+	if (!duration) return null
 	let seconds = parseInt((duration / 1000) % 60, 10)
 	let minutes = parseInt((duration / (1000 * 60)) % 60, 10)
 
@@ -127,6 +142,11 @@ const mapStateToProps = state => ({
 	player: state.player,
 	position: msToTime(state.player.position),
 	duration: msToTime(state.player.duration),
+	positionShow: msToTime(state.player.positionShow),
+	progress:
+		(state.player.positionShow || state.player.position) *
+		(1000 / state.player.duration),
+	volume: state.player.volume,
 })
 
 const mapDispatchToProps = dispatch =>
